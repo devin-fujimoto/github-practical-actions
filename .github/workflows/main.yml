@@ -18,8 +18,7 @@ jobs:
         run: python feed.py
       - name: Push Repo
         run: 
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config user.name "devin-automated"
           git add .
           git commit -m "Modified Feed - automated"
           git push
