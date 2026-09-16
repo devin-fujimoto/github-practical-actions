@@ -17,7 +17,7 @@ jobs:
       - name: Run Feed Generator
         run: python feed.py
       - name: Push Repo
-        run: 
+        run: |
           git config user.name "devin-automated"
           git add .
           git commit -m "Modified Feed - automated"
