@@ -18,8 +18,13 @@ jobs:
         run: python feed.py
       - name: Push Repo
         run: |
-          git config user.name "devin-automated"
-          git add .
-          git commit -m "Modified Feed - automated"
-          git push
+          if ! git diff --cached --quiet; then
+            echo "Staged changes detected! Proceeding with commit tasks..."
+            git config user.name "devin-automated"
+            git add .
+            git commit -m "Modified Feed - automated"
+            git push
+          else
+            echo "Skipping push as no changes detected"
+          fi
           
